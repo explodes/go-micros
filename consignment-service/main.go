@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"log"
 
+	"os"
+
 	pb "github.com/explodes/go-micros/consignment-service/proto/consignment"
 	vesselProto "github.com/explodes/go-micros/vessel-service/proto/vessel"
 	"github.com/micro/go-micro"
-	"os"
 )
 
 const (

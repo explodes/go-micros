@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+
 	pb "github.com/explodes/go-micros/vessel-service/proto/vessel"
 	"gopkg.in/mgo.v2"
 )
@@ -29,7 +30,6 @@ func (s *service) FindAvailable(ctx context.Context, req *pb.Specification, res 
 	res.Vessel = vessel
 	return nil
 }
-
 
 func (s *service) Create(ctx context.Context, req *pb.Vessel, res *pb.Response) error {
 	repo := s.GetRepo()

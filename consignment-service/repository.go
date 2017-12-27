@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	dbName = "shippy"
+	dbName                = "shippy"
 	consignmentCollection = "consignments"
 )
 
