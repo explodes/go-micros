@@ -5,13 +5,12 @@ import (
 	"os"
 
 	pb "github.com/explodes/go-micros/user-service/proto/user"
+	"github.com/micro/cli"
+	"github.com/micro/go-micro"
 	microclient "github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
 	"golang.org/x/net/context"
-	"github.com/micro/cli"
-	"github.com/micro/go-micro"
 )
-
 
 func main() {
 
@@ -36,7 +35,7 @@ func main() {
 				Usage: "Your password",
 			},
 			cli.StringFlag{
-				Name: "company",
+				Name:  "company",
 				Usage: "Your company",
 			},
 		),
@@ -54,10 +53,10 @@ func main() {
 
 			// Call our user service
 			r, err := client.Create(context.Background(), &pb.User{
-				Name: name,
-				Email: email,
+				Name:     name,
+				Email:    email,
 				Password: password,
-				Company: company,
+				Company:  company,
 			})
 			if err != nil {
 				log.Fatalf("Could not create: %v", err)
